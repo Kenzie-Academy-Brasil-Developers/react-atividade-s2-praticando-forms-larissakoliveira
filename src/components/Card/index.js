@@ -2,8 +2,8 @@
 const Card = ({dataForm}) => {
     return (
         <>
-        <h3>{dataForm.fullName}</h3>
-        <h4>{dataForm.userName}</h4>
+        <h5>{dataForm.fullName}</h5>
+        <p>{dataForm.userName}</p>
         <p>{dataForm.email}</p>
         </>
     )
