@@ -14,15 +14,23 @@
   flex-direction: column;
   align-items: center;
   margin-top: 25px;
+  width: 35%
+}
+
+
+input#acceptTerms{
+  width: 10%;
+  margin: 0;
 }
 
 input{
   margin: 7px;
-  padding: 18px;
+  padding: 17px;
   border-radius: 6px;
   background-color: transparent;
   font-size: 16px;
   color: white;
+  width: 85%;
 }
 
 input:focus{
@@ -41,6 +49,7 @@ h4{
   margin: 0;
   font-size:10px;
   color: red;
+  margin: 5px ;
 }
 
 .checkbox {
@@ -57,3 +66,29 @@ button{
   cursor: pointer;
   font-weight: bold;
 }
+
+.password{
+  display: flex;
+  width: 96%;
+  justify-content: center;
+}
+
+.acceptTerms{
+  display: flex;
+  align-items: center;
+  width: 100%;
+ justify-content: center;
+}
+
+.passwordErrors{
+  display: flex;
+}
+
+.passwordErrors > h4{
+  width: 55%;
+}
+
+
+
+
+

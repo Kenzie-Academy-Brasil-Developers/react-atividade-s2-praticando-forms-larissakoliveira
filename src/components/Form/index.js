@@ -34,7 +34,7 @@ const Form = () => {
       .required("Senha obrigatória")
       .matches(
         /(?=^.{8,}$)((?=.*\d)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/g,
-        "Senha deve conter ao menos uma letra maiúscula, uma minúscula, um número e um caracter especial."
+        "Senha minimo uma letra maiúscula, minúscula, um número e um caracter especial."
       ),
     confirmPassword: yup
       .string()
@@ -75,27 +75,33 @@ const Form = () => {
       {errors.email?.message && <h4>{errors.email?.message}</h4>}
       <input placeholder="Confirme seu Email" {...register("emailConfirm")} />
       {errors.emailConfirm?.message && <h4>{errors.emailConfirm?.message}</h4>}
+      <div className='password'>
       <input type="password" placeholder="Senha" {...register("password")} />
-      {errors.password?.message && <h4>{errors.password?.message}</h4>}
+    
       <input
         type="password"
         placeholder="Confirme a senha"
         {...register("confirmPassword")}
       />
-      {errors.confirmPassword?.message && (
+      </div>
+      <div className='passwordErrors'>
+      {errors.password?.message && <h4>{errors.password?.message}</h4>}
+      {errors.confirmPassword?.message && ( 
         <h4>{errors.confirmPassword?.message}</h4>
       )}
+      </div>
       <div className="acceptTerms" {...register("acceptTerms")}>
         <input id="acceptTerms" type="checkbox" {...register("acceptTerms")} />
         <label for="acceptTerms">
           {" "}
           Eu aceito os termos de uso de aplicação{" "}
         </label>
-        {errors.acceptTerms?.message && <h4>{errors.acceptTerms?.message}</h4>}
       </div>
+      {errors.acceptTerms?.message && <h4>{errors.acceptTerms?.message}</h4>}
 
-      <button onClick={() => history.push('/cadastro')} type="submit">Cadastrar</button>
-
+      {/* <Link to='/cadastro'> */}
+      <button onClick = {()=> history.push('/cadastro')} type="submit">Cadastrar</button>
+      {/* </Link> */}
       <Link to="/">Já possui uma conta?</Link>
 
       <Switch>
@@ -106,6 +112,7 @@ const Form = () => {
     </form>
   );
 };
+
 
 export default Form;
 
